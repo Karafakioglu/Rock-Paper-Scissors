@@ -5,13 +5,13 @@ function getComputerChoice(){
 
     switch (randomNumber) {
         case 0:
-            computerChoice = "Rock"
+            computerChoice = "rock"
             break;
         case 1:
-            computerChoice = "Paper"
+            computerChoice = "paper"
             break;
         case 2:
-            computerChoice = "Scissors"
+            computerChoice = "scissors"
             break;
         default:
             console.log("Something aint right!")
@@ -23,6 +23,5 @@ function getComputerChoice(){
 function getUserChoice(){
     let userChoice = prompt("Please choose: rock || paper || scissors").toLowerCase();
     return userChoice;
-
 }
 
