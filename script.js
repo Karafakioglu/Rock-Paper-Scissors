@@ -20,4 +20,9 @@ function getComputerChoice(){
     return computerChoice;
 }
 
-console.log(getComputerChoice());
+function getUserChoice(){
+    let userChoice = prompt("Please choose: rock || paper || scissors").toLowerCase();
+    return userChoice;
+
+}
+
