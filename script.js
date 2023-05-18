@@ -24,36 +24,36 @@ function getUserChoice() {
 
 function playGame(computer, user) {
     let output;
-    let number = 0;
+    let roundScore = 0;
 
     if(computer === "rock" && user === "paper"){
         output = `PC chose ${computer} and user chose ${user}. User wins!`
-        number++;
+        roundScore++;
     }
     else if(computer === "rock" && user === "scissors"){
         output = `PC chose ${computer} and user chose ${user}. PC wins!`
-        number--;
+        roundScore--;
     }
     else if (computer === "paper" && user === "rock"){
         output = `PC chose ${computer} and user chose ${user}. PC wins!`
-        number--;
+        roundScore--;
     }
     else if (computer === "paper" && user === "scissors"){
         output = `PC chose ${computer} and user chose ${user}. User wins!`
-        number++;
+        roundScore++;
     }
     else if (computer === "scissors" && user === "rock"){
         output = `PC chose ${computer} and user chose ${user}. User wins!`
-        number++;
+        roundScore++;
     }
     else if (computer === "scissors" && user === "paper"){
         output = `PC chose ${computer} and user chose ${user}. PC wins!`
-        number--;
+        roundScore--;
     }
     else{
         output = `PC chose ${computer} and user chose ${user}. It is a tie!`
     }
-    return {output,number};
+    return {output,roundScore};
 }
 
 function game(){
@@ -61,9 +61,9 @@ function game(){
     let userScore = 0;
     while(gameCounter){
 
-    let test = playGame(getComputerChoice(),getUserChoice());
-    console.log(test.output);
-    userScore += test.number;
+    let roundResult = playGame(getComputerChoice(),getUserChoice());
+    console.log(roundResult.output);
+    userScore += roundResult.roundScore;
     gameCounter--;
 
     }
