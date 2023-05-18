@@ -22,11 +22,7 @@ function getUserChoice() {
     return userChoice;
 }
 
-function playGame(computer, user) {/* 
-    if (computer === user) {
-        console.log(`Computer chose ${computer} and you chose ${user}. It is a tie!`);
-    }
-     */
+function playGame(computer, user) {
     let output;
 
     if(computer === "rock" && user === "paper"){
@@ -53,5 +49,13 @@ function playGame(computer, user) {/*
     return output;
 }
 
-let result = playGame(getComputerChoice(),getUserChoice());
-console.log(result);
+function game(){
+    let gameCounter = 5;
+    while(gameCounter){
+    let test = playGame(getComputerChoice(),getUserChoice());
+    console.log(test);
+    gameCounter--;
+    }
+}
+
+game();
