@@ -17,10 +17,10 @@
      return computerChoice;
  }
 
-function getUserChoice() {
-    let userChoice = prompt("Please choose: rock || paper || scissors").toLowerCase();
-    return userChoice;
-}
+// function getUserChoice() {
+//     let userChoice = prompt("Please choose: rock || paper || scissors").toLowerCase();
+//     return userChoice;
+// }
 
 function playGame(computer, user) {
     let output;
@@ -63,19 +63,36 @@ function game(){
 
     let roundResult = playGame(getComputerChoice(),getUserChoice());
     console.log(roundResult.output);
-    userScore += roundResult.roundScore;
-    gameCounter--;
+    // userScore += roundResult.roundScore;
+    // gameCounter--;
 
     }
-    if(userScore < 0){
-        console.log("Pc wins the game!")
-    }
-    else if (userScore > 0){
-        console.log("user wins the game!")
-    }
-    else{
-        console.log("It is a tie game!")
-    }
+    // if(userScore < 0){
+    //     console.log("Pc wins the game!")
+    // }
+    // else if (userScore > 0){
+    //     console.log("user wins the game!")
+    // }
+    // else{
+    //     console.log("It is a tie game!")
+    // }
 }
 
-game();
+// game();
+
+let rockBtn = document.getElementById('user-rock-btn');
+let paperBtn = document.getElementById('user-paper-btn');
+let scissorsBtn = document.getElementById('user-scissors-btn');
+
+
+rockBtn.addEventListener('click',function(){
+    console.log("clicked on rock");
+})
+
+paperBtn.addEventListener('click',function(){
+    console.log("clicked on paper");
+})
+
+scissorsBtn.addEventListener('click',function(){
+    console.log("clicked on scissors");
+})
