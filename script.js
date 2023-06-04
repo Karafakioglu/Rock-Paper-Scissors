@@ -17,11 +17,6 @@ function getComputerChoice() {
     return computerChoice;
 }
 
-// function getUserChoice() {
-//     let userChoice = prompt("Please choose: rock || paper || scissors").toLowerCase();
-//     return userChoice;
-// }
-
 function playGame(computer, user) {
     let output;
     let userScore = 0;
@@ -57,34 +52,14 @@ function playGame(computer, user) {
     return { output, userScore, computerScore };
 }
 
-// function game(){
-//     let gameCounter = 5;
-//     let userScore = 0;
-//     while(gameCounter){
-
-//     let roundResult = playGame(getComputerChoice(),getUserChoice());
-//     console.log(roundResult.output);
-//     // userScore += roundResult.roundScore;
-//     // gameCounter--;
-
-//     }
-//     // if(userScore < 0){
-//     //     console.log("Pc wins the game!")
-//     // }
-//     // else if (userScore > 0){
-//     //     console.log("user wins the game!")
-//     // }
-//     // else{
-//     //     console.log("It is a tie game!")
-//     // }
-// }
-
-// // game();
-
 const buttons = document.querySelectorAll('.button')
 const result = document.querySelector('#result')
 const userScoreElement = document.querySelector('#user-score');
 const computerScoreElement = document.querySelector("#comp-score");
+const endResult = document.querySelector("#end-result");
+
+let UserScoreText = userScoreElement.innerText;
+let computerScoreText = computerScoreElement.innerText;
 
 result.innerText = "Result placeholder"
 userScoreElement.innerText = 0;
@@ -105,6 +80,18 @@ buttons.forEach(button => button.addEventListener('click', e => {
     result.innerText = roundResult.output
     userScoreElement.innerText = userPlusOne + parseInt(userScoreElement.innerText);
     computerScoreElement.innerText = computerPlusOne + parseInt(computerScoreElement.innerText);
+
+    if ((userScoreElement.innerText || computerScoreElement.innerText) == 5) {
+        if (userScoreElement.innerText > computerScoreElement.innerText) {
+            endResult.innerText = "User wins the game!";
+        }
+        else if (computerScoreElement.innerText > userScoreElement.innerText) {
+            endResult.innerText = "Computer wins the game!";
+        }
+        else {
+            endResult.innerText = "The game is a tie!";
+        }
+    }
 
 
 }))
