@@ -80,19 +80,33 @@ function game(){
 
 // game();
 
-let rockBtn = document.getElementById('user-rock-btn');
-let paperBtn = document.getElementById('user-paper-btn');
-let scissorsBtn = document.getElementById('user-scissors-btn');
+const buttons = document.querySelectorAll('.button')
+const result = document.querySelector('#result')
+const userScoreElement = document.querySelector('#user-score');
+const computerScoreElement = document.querySelector("#comp-score");
+
+result.innerText = "Result placeholder"
+userScoreElement.innerText = 0;
+computerScoreElement.innerText = 0;
+
+let gameCounter = 5;
+let userScore = 0;
+let computerScore = 0;
+
+buttons.forEach(button => button.addEventListener('click',e => {
+
+    let computer = getComputerChoice();
+    let user = e.target.innerText.toLowerCase();
+    let roundResult = playGame(computer,user);
+    // console.log(roundResult.output)
+    gameCounter--;
+
+    result.innerText = roundResult.output
+    userScoreElement.innerText = userScore;
+    computerScoreElement.innerText = computerScore;
+}))
 
 
-rockBtn.addEventListener('click',function(){
-    console.log("clicked on rock");
-})
 
-paperBtn.addEventListener('click',function(){
-    console.log("clicked on paper");
-})
 
-scissorsBtn.addEventListener('click',function(){
-    console.log("clicked on scissors");
-})
+
