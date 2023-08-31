@@ -73,7 +73,7 @@ buttons.forEach((button) =>
     computerScoreElement.innerText =
       computerPlusOne + parseInt(computerScoreElement.innerText);
 
-    if ((userScoreElement.innerText || computerScoreElement.innerText) == 5) {
+    if (userScoreElement.innerText >= 5|| computerScoreElement.innerText >= 5) {
       if (userScoreElement.innerText > computerScoreElement.innerText) {
         endResult.innerText = "User wins the game!";
       } else if (computerScoreElement.innerText > userScoreElement.innerText) {
@@ -84,3 +84,7 @@ buttons.forEach((button) =>
     }
   })
 );
+
+endResult.addEventListener("MutationObserver", function(e){
+  alert("Hello")
+})
