@@ -84,7 +84,3 @@ buttons.forEach((button) =>
     }
   })
 );
-
-endResult.addEventListener("MutationObserver", function(e){
-  alert("Hello")
-})
